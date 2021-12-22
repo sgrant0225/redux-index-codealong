@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
+// this component handles the creation side of things
 class CreateTodo extends Component {
   state = {
     text: ''
@@ -15,6 +17,9 @@ class CreateTodo extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.addTodo(this.state)
+    this.setState({
+      text: "", 
+    })
   }
   
   render() {
